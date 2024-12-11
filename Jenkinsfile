@@ -42,7 +42,7 @@ pipeline{
         stage('Artifact Creation'){
             steps{
                 echo 'before making the artifact'
-                sh 'tar -cvf my_app.tar.gz addition.py mul.py '
+                sh 'tar -cvf my_app.tar.gz add.py '
                 echo 'after making the artifacts'
             }
         }
