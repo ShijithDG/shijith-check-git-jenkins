@@ -13,7 +13,7 @@ pipeline{
             steps{
                 echo 'before runnign adn installing aws cli to python '
                 sh 'python3 add.py'
-                sh 'apt-get update &&  apt-get install -y awscli'
+                sh 'sudo apt-get update && sudo apt-get install -y awscli'
                 echo 'succes the installtion of aws cli '
             }
         }
