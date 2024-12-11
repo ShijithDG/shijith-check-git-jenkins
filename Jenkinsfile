@@ -20,7 +20,7 @@ pipeline{
             }
         }
         stage('deploy aws'){
-            step{
+            steps{
                     withCredentials([[
                     $class:'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'jenkins-S3'
