@@ -13,7 +13,29 @@ pipeline{
             steps{
                 echo 'before runnign adn installing aws cli to python '
                 sh 'python3 add.py'
-                sh 'sudo apt-get update && sudo apt-get install -y awscli'
+                sh """
+                    # Update the package list
+                    sudo apt-get update
+
+                    # Install required dependencies
+                    sudo apt-get install -y unzip curl
+
+                    # Remove any old AWS CLI versions and installer files
+                    rm -rf awscliv2.zip aws/
+
+                    # Download the AWS CLI version 2 installer
+                    sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+                    # Unzip the downloaded installer
+                    unzip -o awscliv2.zip
+
+                    # Install AWS CLI version 2
+                    sudo ./aws/install
+
+                    # Verify the installation
+                    aws --version
+
+                """
                 echo 'succes the installtion of aws cli '
             }
         }
