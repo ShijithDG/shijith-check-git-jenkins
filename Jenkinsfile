@@ -30,7 +30,7 @@ pipeline{
                     unzip -o awscliv2.zip
 
                     # Install AWS CLI version 2
-                    sudo ./aws/install
+                    sudo ./aws/install --update
 
                     # Verify the installation
                     aws --version
