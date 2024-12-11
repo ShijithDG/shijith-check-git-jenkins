@@ -14,14 +14,14 @@ pipeline{
                 echo 'before runnign adn installing aws cli to python '
                 sh 'python3 add.py'
                 sh '''
-                            apt-get update
-                            apt-get install -y docker.io unzip curl
-                            rm -rf awscliv2.zip aws/
-                            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                            unzip -o awscliv2.zip
-                            ./aws/install
+                        sudo apt-get update
+                        sudo apt-get install -y unzip curl
+                        rm -rf awscliv2.zip aws/
+                        sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                        unzip -o awscliv2.zip
+                        sudo ./aws/install
 
-                            aws --version
+                        aws --version
                         '''
                 echo 'succes the installtion of aws cli '
             }
