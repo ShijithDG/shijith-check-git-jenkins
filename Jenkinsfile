@@ -3,12 +3,12 @@ pipeline{
 
     stages{
         stage('Clone Repo'){
-            step{
+            steps{
                 git branch : 'main' , url :'https://github.com/ShijithDG/shijith-check-git-jenkins.git'
             }
         }
         stage('run python'){
-            step{
+            steps{
                 sh 'python3 add.py'
             }
         }
